@@ -1,0 +1,52 @@
+---
+type HTMLInputTypeAttribute = "email" | "number" | "text";
+
+interface Props {
+  label: string;
+  inputType: HTMLInputTypeAttribute;
+  name: string;
+}
+
+const { label, inputType, name } = Astro.props;
+---
+
+<div class="input-form">
+  <label for={name}>{label}</label>
+  <input name={name} id={name} type={inputType} required />
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .input-form {
+    @include rel-position;
+    width: 100%;
+
+    label {
+      font-family: var(--fontRegular);
+      font-size: 0.875rem;
+      line-height: auto;
+      @include abs-position;
+      left: 1rem;
+      top: 0.75rem;
+      background: var(--bgClr);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: var(--bgClr);
+      border: 1px solid var(--secondaryTextClr);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      resize: none;
+    }
+
+    &:focus-within {
+      label {
+        top: -0.75rem;
+      }
+    }
+  }
+</style>

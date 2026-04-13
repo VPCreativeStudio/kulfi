@@ -1,0 +1,43 @@
+---
+import Button from "./button.astro";
+---
+
+<div class="contact-wrapper">
+  <h2>Ready to Own a Bezt Kulfis?</h2>
+  <p>
+    Start your franchise with just ₹3,99,000 investment. No royalty, lifetime
+    agreement, 40-50% profit margins.
+  </p>
+  <Button label="Call 7550006455" btnClasses="btn-primary" icon="call" />
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .contact-wrapper {
+    background: var(--textClr-10);
+    width: 100%;
+    padding: 2rem 3rem 3rem;
+    color: var(--textClr);
+    text-align: center;
+    border-radius: var(--rd-16);
+    @include flex-element;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+      font-family: var(--fontHdBold);
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-family: var(--fontRegular);
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  icon: string;
+  heading: string;
+  paragraph: string;
+}
+
+const { icon, heading, paragraph } = Astro.props;
+---
+
+<div class="about-card">
+  <div class={`icon ${icon}`}></div>
+  <h2 class="heading">{heading}</h2>
+  <p class="paragraph">{paragraph}</p>
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .about-card {
+    background: var(--lightPrimaryClr);
+    color: var(--whiteClr);
+    padding: 1.5rem;
+    border-radius: var(--rd-16);
+    @include flex-element;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .icon {
+      padding: 0.75rem;
+      background: var(--whiteClr-32);
+      border-radius: var(--rd-12);
+      margin-bottom: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .heading {
+      font-family: var(--fontBold);
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+    }
+
+    .paragraph {
+      font-family: var(--fontRegular);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+</style>

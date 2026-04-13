@@ -1,0 +1,49 @@
+---
+interface Props {
+  icon: string;
+  tab?: string;
+  tabname: string;
+}
+
+const { icon, tabname, tab } = Astro.props;
+---
+
+<div class={`tab ${tab}`}>
+  <div class={`icon ${icon}`}></div>
+  <span class="tabname">{tabname}</span>
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .tab {
+    @include flex-element;
+    padding: 0.75rem 1.25rem;
+    gap: 0.5rem;
+    border-radius: var(--rd-64);
+    border: 1px solid var(--secondaryTextClr);
+    background: var(--bgClr);
+    cursor: pointer;
+
+    span {
+      font-family: var(--fontSemi);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    &:hover {
+      background: var(--lightPrimaryClr-10);
+    }
+
+    &.active {
+      background: var(--lightPrimaryClr);
+      color: var(--whiteClr);
+      border-color: var(--primaryBdClr);
+
+      &:hover {
+        background: var(--primaryClr);
+      }
+    }
+  }
+</style>

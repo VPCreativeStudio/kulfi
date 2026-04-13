@@ -1,0 +1,231 @@
+:root {
+  --primaryClr: hsl(0, 100%, 27%);
+  --primaryBdClr: hsl(0, 98%, 25%);
+  --lightPrimaryClr: hsl(0, 72%, 51%);
+  --lightPrimaryClr-10: hsla(0, 72%, 51%, 0.1);
+
+  --ylwClr: hsl(43, 96%, 56%);
+  --ylwGrandient: linear-gradient(240deg, #ffbe1a 0%, #ffcc4d 100%);
+
+  --textClr: hsl(16, 30%, 15%);
+  --textClr-60: hsla(16, 30%, 15%, 0.6);
+  --textClr-10: hsla(16, 30%, 15%, 0.1);
+  --secondaryTextClr: hsl(16, 10%, 45%);
+
+  --menuBoxShadow: 0px 4px 24px -4px var(--textClr-10);
+
+  --whiteClr: hsl(0, 0%, 100%);
+  --whiteClr-10: hsla(0, 0%, 100%, 0.1);
+  --whiteClr-20: hsla(0, 0%, 100%, 0.2);
+  --whiteClr-32: hsla(0, 0%, 100%, 0.32);
+  --whiteClr-64: hsla(0, 0%, 100%, 0.64);
+  --whiteClr-80: hsla(0, 0%, 100%, 0.8);
+
+  --bgClr: hsl(40, 100%, 97%);
+  --cardClr: #faf5eb;
+
+  --ft-12: 0.75rem;
+  --ft-14: 0.875rem;
+  --ft-16: 1rem;
+  --ft-18: 1.125rem;
+  --ft-20: 1.25rem;
+  --ft-24: 1.5rem;
+  --ft-30: 1.875rem;
+  --ft-32: 2rem;
+  --ft-64: 4rem;
+  --ft-96: 6rem;
+
+  --rd-8: 0.5rem;
+  --rd-12: 0.75rem;
+  --rd-16: 1rem;
+  --rd-20: 1.25rem;
+  --rd-24: 1.5rem;
+  --rd-32: 2rem;
+  --rd-64: 4rem;
+
+  --sectionPd: 4rem 8rem;
+
+  --fontBold: boldFont, sans-serif;
+  --fontThin: thinFont, sans-serif;
+  --fontMedium: mediumFont, sans-serif;
+  --fontSemi: semiFont, sans-serif;
+  --fontRegular: primaryFont, sans-serif;
+  --fontLight: lightFont, sans-serif;
+
+  --fontHdRegular: headRegularFont, sans-serif;
+  --fontHdMedium: headMediumFont, sans-serif;
+  --fontHdSemi: headSemiFont, sans-serif;
+  --fontHdBold: headBoldFont, sans-serif;
+  --fontHdBlack: headBlackFont, sans-serif;
+
+  --fontSubHdBold: subHeadBold, sans-serif;
+  --fontSubHdMedium: subHeadMedium, sans-serif;
+  --fontSubHdRegular: subHeadRegular, sans-serif;
+  --fontSubHdLight: subHeadLight, sans-serif;
+
+  --transition-3: all 0.3s ease;
+  --transition-5: all 0.5s ease;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--blackClr);
+  background-color: var(--whiteClr);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: var(--font-heading);
+}
+h1 {
+  font-size: var(--ft-96);
+}
+
+h2 {
+  font-size: var(--ft-64);
+}
+
+h3 {
+  font-size: var(--ft-32);
+}
+
+h4 {
+  font-size: var(--ft-24);
+}
+
+h5 {
+  font-size: var(--ft-20);
+}
+
+h6 {
+  font-size: var(--ft-16);
+}
+p,
+.para {
+  margin: 0;
+}
+i,
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: var(--primaryClr);
+}
+b,
+strong {
+  font-weight: bolder;
+}
+.small,
+small {
+  font-size: 0.875em;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"],
+ul[role="menu"],
+ol[role="menu"],
+ul[role="menubar"],
+ol[role="menubar"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+img,
+picture,
+svg {
+  vertical-align: middle;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  text-transform: capitalize;
+}
+button,
+[role="button"] {
+  cursor: pointer;
+}
+select {
+  word-wrap: normal;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 50rem) {
+  :root {
+    --sectionPd: 2rem 4rem;
+
+    --ft-12: 0.625rem;
+    --ft-14: 0.75rem;
+    --ft-16: 0.875rem;
+    --ft-18: 1rem;
+    --ft-20: 1.125rem;
+    --ft-24: 1.25rem;
+    --ft-30: 1.75rem;
+    --ft-32: 1.875rem;
+    --ft-64: 2rem;
+    --ft-96: 3rem;
+  }
+}

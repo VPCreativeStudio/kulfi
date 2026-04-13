@@ -1,11 +1,723 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from "../components/header.astro";
+import Heading from "../components/heading.astro";
+import HeroContent from "../components/hero-content.astro";
+import Form from "../components/form.astro";
+import AboutCard from "../components/about-card.astro";
+import Tab from "../components/tabs.astro";
+import MenuCard from "../components/menu-card.astro";
+import AddressCard from "../components/address-card.astro";
+import Contact from "../components/contact.astro";
+import FooterCredit from "../components/footer-credit.astro";
+
+// Import local JSON files directly
+import menuData from "../assets/script/menu.json";
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <main>
+    <section class="hero">
+      <HeroContent />
+      <Form />
+    </section>
+    <section class="about">
+      <div class="about-section">
+        <div class="about-content-wrapper">
+          <div class="about-image">
+            <img
+              src="../src/assets/images/kulfi-mascot.png"
+              alt="Bezt Kulfi's"
+            />
+          </div>
+          <div class="about-content">
+            <Heading
+              subheading="About Us"
+              heading="Be a Part of Bezt Kulfi'sFamily"
+              paragraph="Bezt Kulfis brings the legacy of true kulfi craftsmanship from Tamil Nadu. Our menu features Kulfis, Creamy Shakes, Falooda, Ice Cream, Jigarthanda, Rosemilk, Sandwich, Momos, Burger & more."
+            />
+          </div>
+        </div>
+        <div class="about-wrapper">
+          <AboutCard
+            icon="industry"
+            heading="Own Manufacturing"
+            paragraph="Complete in-house production ensures quality and consistency"
+          />
+          <AboutCard
+            icon="profit"
+            heading="High Profit Returns"
+            paragraph="40-50% profit margins with simplified operations"
+          />
+          <AboutCard
+            icon="royalty"
+            heading="No Royalty Fee"
+            paragraph="Keep what you earn — zero royalty, maximum freedom"
+          />
+          <AboutCard
+            icon="user"
+            heading="Easy Training"
+            paragraph="Complete training provided for 2-person operation"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="menu">
+      <Heading
+        subheading="Our Menu"
+        heading="Taste the Legacy"
+        paragraph="Customized menu options available for franchise partners."
+      />
+      <div class="tab-wrapper">
+        <Tab tab="active" icon="icecream" tabname="Frozen Delights" />
+        <Tab icon="coffee" tabname="Beverages" />
+        <Tab icon="snack" tabname="Snacks" />
+        <Tab icon="nonveg" tabname="Non-Veg" />
+      </div>
+      <div class="menu-wrapper">
+        {
+          menuData.map((menu) => (
+            <MenuCard
+              image={menu.menuimage}
+              category={menu.category}
+              menu={menu.menu}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class="franchise">
+      <Heading
+        subheading="Franchise"
+        heading="Start Your Journey"
+        paragraph="Entrepreneurs, young graduates, or anyone with capital and enthusiasm — join the Bezt Kulfis family."
+      />
+      <div class="frachise-detail-wrapper">
+        <div class="franchise-list">
+          <div class="franchise">
+            <h4 class="franchise-detail-heading">Franchise Highlights</h4>
+          </div>
+          <ul role="list">
+            <li role="listitem" class="detail-list">
+              <span>Franchise Model</span>
+              <h6>FOFO</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Area Required</span>
+              <h6>150 - 300 sq.ft</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Agreement Period</span>
+              <h6>Lifetime</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Profit Margin</span>
+              <h6>40% - 50%</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Royalty Fee</span>
+              <h6>No Royalty</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Territory Exclusivity</span>
+              <h6>1.5 km Radius</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Manpower</span>
+              <h6>2 Persons</h6>
+            </li>
+          </ul>
+        </div>
+        <div class="franchise-list colored-version">
+          <div class="franchise">
+            <h4 class="franchise-detail-heading">Investment Breakup</h4>
+            <span class="franchise-detail-subheading"
+              >For a 150 sq.ft setup</span
+            >
+          </div>
+          <ul role="list">
+            <li role="listitem" class="detail-list">
+              <span>Franchise Fee (Non-refundable)</span>
+              <h6>₹2,00,000</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Equipment</span>
+              <h6>₹1,47,780</h6>
+            </li>
+            <li role="listitem" class="detail-list">
+              <span>Initial Stock</span>
+              <h6>₹51,220</h6>
+            </li>
+          </ul>
+          <div class="franchise-amount-wrapper">
+            <span>Total Investment</span>
+            <strong>₹3,99,000</strong>
+          </div>
+          <div class="franchise-highlight-wrapper">
+            <div class="franchise-highlight">
+              <i class="icon checklist"></i>
+              <span>Flexible Business Models</span>
+            </div>
+            <div class="franchise-highlight">
+              <i class="icon checklist"></i>
+              <span>Simplified Menu</span>
+            </div>
+            <div class="franchise-highlight">
+              <i class="icon checklist"></i>
+              <span>Complete Training Provided</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="franchise-sales-wrapper">
+        <h4 class="franchise-sales-heading">Sales Projection</h4>
+        <div class="sales-projection-wrapper">
+          <div class="sales-projection">
+            <h6>Model 1</h6>
+            <div class="sales-data">
+              <span>Daily Sales</span>
+              <strong>₹8,000/day</strong>
+            </div>
+            <div class="sales-data">
+              <span>Monthly Turnover</span>
+              <strong>₹2,40,000/mo</strong>
+            </div>
+            <div class="sales-data highlighted">
+              <span>Monthly Profit</span>
+              <strong>₹59,000/mo</strong>
+            </div>
+          </div>
+          <div class="sales-projection">
+            <h6>Model 2</h6>
+            <div class="sales-data">
+              <span>Daily Sales</span>
+              <strong>₹10,000/day</strong>
+            </div>
+            <div class="sales-data">
+              <span>Monthly Turnover</span>
+              <strong>₹3,00,000/mo</strong>
+            </div>
+            <div class="sales-data highlighted">
+              <span>Monthly Profit</span>
+              <strong>₹84,000/mo</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery">
+      <Heading
+        subheading="Gallery"
+        heading="Our Outlets"
+        paragraph="Step in. Chill out. A glimpse into the Bezt Kulfis experience."
+      />
+
+      <div class="gallery-wrapper">
+        <div class="gallery-image image-1">
+          <img src="../src/assets/images/storefront.png" alt="StoreFront" />
+        </div>
+        <div class="gallery-image image-2">
+          <img src="../src/assets/images/counter.png" alt="Counter" />
+        </div>
+        <div class="gallery-image image-3">
+          <img src="../src/assets/images/Interior.png" alt="Scoop" />
+        </div>
+        <div class="gallery-image image-4">
+          <img src="../src/assets/images/Wallart.png" alt="Kulfi" />
+        </div>
+        <div class="gallery-image image-5">
+          <img src="../src/assets/images/shop.png" alt="Team" />
+        </div>
+        <div class="gallery-image image-6">
+          <img src="../src/assets/images/menudisplay.png" alt="Customers" />
+        </div>
+        <div class="gallery-image image-7">
+          <img src="../src/assets/images/exterior.png" alt="Franchise" />
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <footer>
+        <Heading
+          subheading="Contact"
+          heading="Get In Touch"
+          paragraph="Ready to start your franchise journey? Reach out today."
+        />
+        <div class="address-wrapper">
+          <AddressCard
+            icon="location"
+            heading="Office Address"
+            paragraph="No.23, 1st Floor, Jai Nagar, Arumbakkam, Chennai  600106"
+          />
+          <AddressCard
+            icon="phone"
+            heading="Phone"
+            paragraph="7550006455 / 7550066694"
+          />
+          <AddressCard
+            icon="mail"
+            heading="Email"
+            paragraph="beztkulfisfranchise@gmail.com"
+          />
+          <AddressCard
+            icon="website"
+            heading="Website"
+            paragraph="https://beztkulfisfranchise.com/"
+          />
+        </div>
+        <Contact />
+      </footer>
+    </section>
+    <FooterCredit />
+  </main>
 </Layout>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  section {
+    padding: var(--sectionPd);
+    background: var(--bgClr);
+
+    &.hero {
+      background-image: url("../assets/images/hero-bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      @include grid-element;
+      place-content: center;
+      grid-template-columns: 1fr 1fr;
+      z-index: 1;
+    }
+
+    &.gallery,
+    &.menu {
+      background: var(--cardClr);
+    }
+
+    &.footer {
+      background: var(--ylwGrandient);
+    }
+
+    &.menu,
+    &.franchise,
+    &.gallery,
+    &.footer footer {
+      @include grid-element;
+      gap: 2rem;
+    }
+  }
+
+  .about-section {
+    padding: 3rem 6rem 0;
+    border-radius: var(--rd-32) var(--rd-32) 0 0;
+    background-color: var(--bgClr);
+    transform: translateY(-6rem);
+    z-index: 2;
+    @include rel-position;
+  }
+
+  .about-content-wrapper {
+    @include grid-element;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+
+    .about-image {
+      @include grid-element;
+      @include rel-position;
+      place-content: center;
+
+      &::after {
+        content: "";
+        width: 20rem;
+        height: 20rem;
+        background: var(--lightPrimaryClr);
+        filter: blur(200px);
+        border-radius: 50%;
+        @include center-pos;
+        z-index: -1;
+      }
+
+      img {
+        transform: translateY(2.5rem) scale(1.25);
+      }
+    }
+    .heading-wrapper {
+      align-items: start;
+      text-align: left;
+    }
+  }
+  .about-wrapper {
+    --grid-max-item: 4;
+    --grid-gap: 1.5rem;
+    --grid-col-size: calc(
+      (100% - (var(--grid-gap) * (var(--grid-max-item) - 1))) /
+        var(--grid-max-item)
+    );
+
+    @include grid-element;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(15rem, var(--grid-col-size)), 1fr)
+    );
+  }
+
+  .address-wrapper {
+    --grid-max-item: 4;
+    --grid-gap: 1.5rem;
+    --grid-col-size: calc(
+      (100% - (var(--grid-gap) * (var(--grid-max-item) - 1))) /
+        var(--grid-max-item)
+    );
+
+    @include grid-element;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(18rem, var(--grid-col-size)), 1fr)
+    );
+  }
+
+  .franchise-sales-wrapper {
+    padding: 1rem 2rem;
+    background: var(--cardClr);
+    color: var(--textClr);
+    border-radius: var(--rd-24);
+
+    .franchise-sales-heading {
+      font-family: var(--fontHdBold);
+      font-size: 1.5rem;
+      line-height: 2rem;
+      text-align: center;
+    }
+
+    .sales-projection-wrapper {
+      @include grid-element;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, minmax(18rem, 15rem));
+      place-content: center;
+      padding: 1.5rem;
+
+      .sales-projection {
+        padding: 1.5rem;
+        text-align: center;
+        background: var(--bgClr);
+        border-radius: var(--rd-16);
+      }
+
+      h6 {
+        color: var(--lightPrimaryClr);
+        font-family: var(--fontSemi);
+        font-size: var(--ft-14);
+        line-height: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .sales-data {
+        @include flex-element;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.75rem;
+
+        span {
+          font-family: var(--fontRegular);
+          font-size: var(--ft-12);
+          line-height: 1rem;
+          color: var(--secondaryTextClr);
+        }
+
+        strong {
+          font-family: var(--fontRegular);
+          font-size: var(--ft-14);
+          line-height: 1.25rem;
+          color: var(--textClr);
+        }
+
+        &.highlighted {
+          border-top: 1px solid var(--textClr-10);
+          padding-top: 0.75rem;
+          strong {
+            font-family: var(--fontBold);
+            font-size: var(--ft-24);
+            line-height: 2rem;
+            color: var(--lightPrimaryClr);
+          }
+        }
+      }
+    }
+  }
+
+  .frachise-detail-wrapper {
+    @include grid-element;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    .franchise {
+      padding-bottom: 1.5rem;
+      font-family: var(--fontHdBold);
+
+      .franchise-detail-heading {
+        font-family: var(--fontHdBold);
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .franchise-detail-subheading {
+        color: var(--whiteClr-64);
+        font-family: var(--fontSubHdBold);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .franchise-list {
+      padding: 2rem;
+      background: var(--bgClr);
+      color: var(--textClr);
+      font-family: var(--fontSemi);
+      border-radius: var(--rd-24);
+
+      li {
+        @include flex-element;
+        justify-content: space-between;
+        align-items: center;
+        font-size: var(--ft-16);
+        line-height: 1.5rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--textClr-10);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        span {
+          font-family: var(--fontBold);
+          color: var(--secondaryTextClr);
+        }
+
+        h6 {
+          font-family: var(--fontSemi);
+          color: var(--textClr);
+        }
+      }
+
+      &.colored-version {
+        background: var(--lightPrimaryClr);
+        color: var(--whiteClr);
+        border-bottom: 1px solid var(--whiteClr-80);
+
+        span {
+          color: var(--whiteClr);
+        }
+
+        h6 {
+          color: var(--whiteClr);
+        }
+      }
+    }
+
+    .franchise-amount-wrapper {
+      background: var(--whiteClr-10);
+      border-radius: var(--rd-16);
+      padding: 1.5rem;
+      width: 100%;
+      @include flex-element;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      span {
+        font-family: var(--fontSubHdBold);
+        font-size: var(--ft-16);
+        line-height: 1.5rem;
+      }
+
+      strong {
+        font-family: var(--fontBold);
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    .franchise-highlight-wrapper {
+      @include grid-element;
+      grid-template-columns: repeat(3, 1fr);
+
+      .franchise-highlight {
+        @include flex-element;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        span {
+          font-family: var(--fontRegular);
+          font-size: var(--ft-12);
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+
+  .tab-wrapper {
+    @include flex-element;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-wrapper {
+    --grid-max-item: 4;
+    --grid-gap: 1.5rem;
+    --grid-col-size: calc(
+      (100% - (var(--grid-gap) * (var(--grid-max-item) - 1))) /
+        var(--grid-max-item)
+    );
+
+    @include grid-element;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(18rem, var(--grid-col-size)), 1fr)
+    );
+  }
+
+  .icon {
+    @include flex-element;
+    @include transform-origin(center);
+    transition: var(--transition);
+
+    &::before {
+      content: "";
+      @include inline-block-element;
+      transition: var(--transition);
+      vertical-align: middle;
+    }
+
+    &.industry::before {
+      @include factory-icon;
+    }
+    &.profit::before {
+      @include profit-icon;
+    }
+    &.royalty::before {
+      @include award-icon;
+    }
+    &.user::before {
+      @include user-icon;
+    }
+
+    &.icecream::before {
+      @include delight-icon;
+    }
+    &.coffee::before {
+      @include beverage-icon;
+    }
+    &.snack::before {
+      @include snack-icon;
+    }
+    &.nonveg::before {
+      @include nonveg-icon;
+    }
+
+    &.location::before {
+      @include location-icon;
+    }
+    &.phone::before {
+      @include phone-icon;
+    }
+    &.mail::before {
+      @include mail-icon;
+    }
+    &.website::before {
+      @include website-icon;
+    }
+  }
+
+  .about-card .icon {
+    &::before {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .tab .icon {
+    &::before {
+      background-color: var(--textClr);
+    }
+  }
+  .tab.active .icon {
+    &::before {
+      background-color: var(--whiteClr);
+    }
+  }
+
+  .franchise-highlight .icon {
+    &::before {
+      @include checklist-icon;
+      background-color: var(--ylwClr);
+    }
+  }
+
+  .address-card .icon {
+    &::before {
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--lightPrimaryClr);
+    }
+  }
+
+  .gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0.25rem;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--rd-16);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .image-1 {
+    grid-area: 1 / 1 / 5 / 3;
+  }
+  .image-2 {
+    grid-area: 5 / 1 / 9 / 3;
+  }
+  .image-3 {
+    grid-area: 1 / 3 / 3 / 5;
+  }
+  .image-4 {
+    grid-area: 3 / 3 / 5 / 5;
+  }
+  .image-5 {
+    grid-area: 5 / 3 / 7 / 5;
+  }
+  .image-6 {
+    grid-area: 1 / 5 / 3 / 7;
+  }
+  .image-7 {
+    grid-area: 3 / 5 / 5 / 7;
+  }
+</style>

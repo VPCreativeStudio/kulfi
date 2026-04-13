@@ -1,0 +1,33 @@
+<div class="logo-wrapper">
+  <img src="../src/assets/images/kulfi-mascot.png" alt="Bezt Kulfi Logo" />
+  <h5>Bezt Kulfi's</h5>
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .logo-wrapper {
+    @include flex-element;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0 0 0 5rem;
+    @include rel-position;
+
+    img {
+      @include abs-position;
+      width: 5rem;
+      height: 7rem;
+      left: 0;
+      top: 0;
+      transform: translateY(-1rem);
+    }
+
+    h5 {
+      font-family: var(--fontHdBold);
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      color: var(--whiteClr);
+    }
+  }
+</style>

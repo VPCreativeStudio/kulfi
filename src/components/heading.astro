@@ -1,0 +1,49 @@
+---
+interface Props {
+  subheading: string;
+  heading: string;
+  paragraph: string;
+}
+
+const { subheading, heading, paragraph } = Astro.props;
+---
+
+<div class="heading-wrapper">
+  <h4 class="subheading">{subheading}</h4>
+  <h2 class="heading">{heading}</h2>
+  <p class="paragraph">{paragraph}</p>
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .heading-wrapper {
+    @include grid-element;
+    place-content: center;
+    gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+
+    .subheading {
+      font-family: var(--fontSemi);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: var(--lightPrimaryClr);
+    }
+
+    .heading {
+      font-family: var(--fontfontHdBoldBold);
+      font-size: 3rem;
+      line-height: 3rem;
+      color: var(--textClr);
+    }
+
+    .paragraph {
+      font-family: var(--fontRegular);
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: var(--secondaryTextClr);
+    }
+  }
+</style>

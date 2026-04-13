@@ -1,0 +1,40 @@
+---
+import Logo from "../components/logo.astro";
+import Nav from "../components/navigation.astro";
+import Button from "../components/button.astro";
+---
+
+<header>
+  <Logo />
+  <div class="navigation-button hide">
+    <span class="hambuger menu-1"></span>
+    <span class="hambuger menu-2"></span>
+    <span class="hambuger menu-3"></span>
+  </div>
+  <div class="navigation-wrapper">
+    <Nav />
+    <Button label="Call Me" btnClasses="btn-primary" icon="call" />
+  </div>
+</header>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  header {
+    @include fixed-position;
+    width: 100vw;
+    padding: 1rem 8rem;
+    background-color: var(--primaryClr);
+    @include flex-element;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+
+    .navigation-wrapper {
+      @include flex-element;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+</style>

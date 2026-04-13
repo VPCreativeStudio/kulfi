@@ -1,0 +1,105 @@
+<div class="hero-content">
+  <span class="intro">India's Fast-Growing Kulfi Franchise</span>
+  <h1>Start Your Own <strong>Bezt Kulfi</strong> Franchise</h1>
+  <div class="chip color-chip">
+    <span>Investment starts at ₹3.99 Lakhs</span>
+  </div>
+  <div class="chip">
+    <i class="icon call"></i>
+    <span>Call Us: 7550006455/7550066694</span>
+  </div>
+  <div class="tag-wrapper">
+    <div class="tag">
+      <strong>40-50%</strong>
+      <span>Profit Margin</span>
+    </div>
+    <div class="tag">
+      <strong>₹0</strong>
+      <span>Royalty Fee</span>
+    </div>
+    <div class="tag">
+      <strong>Lifetime</strong>
+      <span>Agreement</span>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  .hero-content {
+    span.intro {
+      font-family: var(--fontSemi);
+      font-size: var(--ft-14);
+      line-height: 1.25rem;
+      color: var(--whiteClr-64);
+    }
+
+    h1 {
+      font-family: var(--fontHdBold);
+      font-size: 4rem;
+      line-height: 4.25rem;
+      color: var(--whiteClr);
+      margin-bottom: 1rem;
+
+      strong {
+        color: var(--ylwClr);
+        @include block-element;
+      }
+    }
+
+    .chip {
+      background: var(--whiteClr);
+      color: var(--lightPrimaryClr);
+      padding: 1.5rem 2rem;
+      border-radius: var(--rd-64);
+      font-family: var(--fontBold);
+      font-size: 1.25rem;
+      width: max-content;
+      margin-bottom: 1rem;
+
+      &.color-chip {
+        background: var(--ylwClr);
+        color: var(--textClr);
+      }
+    }
+
+    .tag-wrapper {
+      @include flex-element;
+      gap: 3rem;
+      color: var(--whiteClr);
+
+      .tag {
+        @include flex-element;
+        flex-direction: column;
+        gap: 0.25rem;
+        @include rel-position;
+
+        &::before {
+          content: "";
+          width: 1px;
+          height: calc(100% - 2rem);
+          background-color: var(--whiteClr);
+          @include top-pos;
+          right: -1.5rem;
+        }
+
+        &:last-child::before {
+          display: none;
+        }
+      }
+      strong {
+        font-family: var(--fontBold);
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+      span {
+        font-family: var(--fontRegular);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: var(--whiteClr);
+      }
+    }
+  }
+</style>

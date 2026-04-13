@@ -1,0 +1,36 @@
+<nav>
+  <ul role="menu">
+    <li role="menuitem"><a href="/about">About</a></li>
+    <li role="menuitem"><a href="/menu">Menu</a></li>
+    <li role="menuitem"><a href="/franchise">Franchise</a></li>
+    <li role="menuitem"><a href="/gallery">Gallery</a></li>
+    <li role="menuitem"><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style lang="scss" is:global>
+  @use "../assets/scss/mixin" as *;
+  @use "../assets/scss/root" as *;
+
+  nav {
+    ul {
+      @include flex-element;
+      gap: 1rem;
+
+      li {
+        a {
+          padding: 0.5rem 1rem;
+          background-color: var(--primaryClr);
+          color: var(--whiteClr);
+          font-family: var(--fontMedium);
+          font-size: 1rem;
+          line-height: 1.25rem;
+
+          &:hover {
+            background-color: var(--lightPrimaryClr);
+          }
+        }
+      }
+    }
+  }
+</style>
