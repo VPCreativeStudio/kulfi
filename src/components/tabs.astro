@@ -8,7 +8,7 @@ interface Props {
 const { icon, tabname, tab } = Astro.props;
 ---
 
-<div class={`tab ${tab}`}>
+<div class={`tab ${tab}`} data-target={icon}>
   <div class={`icon ${icon}`}></div>
   <span class="tabname">{tabname}</span>
 </div>
