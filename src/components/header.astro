@@ -6,7 +6,7 @@ import Button from "../components/button.astro";
 
 <header>
   <Logo />
-  <div class="navigation-button hide">
+  <div class="navigation-button">
     <span class="hambuger menu-1"></span>
     <span class="hambuger menu-2"></span>
     <span class="hambuger menu-3"></span>
@@ -24,17 +24,47 @@ import Button from "../components/button.astro";
   header {
     @include fixed-position;
     width: 100vw;
-    padding: 1rem 8rem;
+    padding: var(--sectionHeaderPd);
     background-color: var(--primaryClr);
     @include flex-element;
     justify-content: space-between;
     align-items: center;
     z-index: 9;
 
+    .navigation-button {
+      @include hide-element;
+    }
+
     .navigation-wrapper {
       @include flex-element;
       gap: 2rem;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 65rem) {
+    .navigation-button {
+      @include block-element;
+    }
+
+    .navigation-wrapper {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include abs-position;
+      height: 100vh;
+      top: 0;
+      right: -15rem;
+      background-color: var(--primaryClr);
+      padding: 2rem 1rem;
+
+      &:active {
+        right: 0;
+      }
+    }
+
+    section.hero {
+      grid-template-columns: 1fr;
     }
   }
 </style>

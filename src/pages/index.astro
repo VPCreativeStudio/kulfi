@@ -570,6 +570,7 @@ import menuData from "../assets/script/menu.json";
     gap: 0.75rem;
     justify-content: center;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .menu-wrapper {
@@ -719,5 +720,60 @@ import menuData from "../assets/script/menu.json";
   }
   .image-7 {
     grid-area: 3 / 5 / 5 / 7;
+  }
+
+  @media (max-width: 65rem) {
+    section.hero {
+      grid-template-columns: 1fr;
+      height: 100%;
+      gap: 2rem;
+    }
+
+    .about-section {
+      padding: 0;
+      transform: translateY(0rem);
+
+      .about-content-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        .about-image {
+          img {
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .heading-wrapper {
+          align-items: center;
+        }
+      }
+    }
+
+    .frachise-detail-wrapper,
+    .franchise-sales-wrapper .sales-projection-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+      .gallery-image {
+        grid-area: auto;
+      }
+    }
+
+    .menu-wrapper {
+      grid-template-columns: 1fr 1fr;
+
+      .menu-card {
+        width: 10rem;
+
+        .image {
+          height: 10rem;
+        }
+      }
+    }
   }
 </style>

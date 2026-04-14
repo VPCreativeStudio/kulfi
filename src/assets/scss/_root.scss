@@ -44,6 +44,7 @@
   --rd-64: 4rem;
 
   --sectionPd: 4rem 8rem;
+  --sectionHeaderPd: 1rem 8rem;
 
   --fontBold: boldFont, sans-serif;
   --fontThin: thinFont, sans-serif;
@@ -215,7 +216,8 @@ textarea {
 
 @media (max-width: 50rem) {
   :root {
-    --sectionPd: 2rem 4rem;
+    --sectionPd: 4rem 2rem;
+    --sectionHeaderPd: 0.5rem 4rem;
 
     --ft-12: 0.625rem;
     --ft-14: 0.75rem;
