@@ -392,8 +392,8 @@ import menuData from "../assets/script/menu.json";
 
     .franchise-sales-heading {
       font-family: var(--fontHdBold);
-      font-size: 1.5rem;
-      line-height: 2rem;
+      font-size: var(--ft-24);
+      line-height: var(--ft-32);
       text-align: center;
     }
 
@@ -415,7 +415,7 @@ import menuData from "../assets/script/menu.json";
         color: var(--lightPrimaryClr);
         font-family: var(--fontSemi);
         font-size: var(--ft-14);
-        line-height: 1.25rem;
+        line-height: var(--ft-20);
         margin-bottom: 1rem;
       }
 
@@ -428,14 +428,14 @@ import menuData from "../assets/script/menu.json";
         span {
           font-family: var(--fontRegular);
           font-size: var(--ft-12);
-          line-height: 1rem;
+          line-height: var(--ft-16);
           color: var(--secondaryTextClr);
         }
 
         strong {
           font-family: var(--fontRegular);
           font-size: var(--ft-14);
-          line-height: 1.25rem;
+          line-height: var(--ft-20);
           color: var(--textClr);
         }
 
@@ -445,7 +445,7 @@ import menuData from "../assets/script/menu.json";
           strong {
             font-family: var(--fontBold);
             font-size: var(--ft-24);
-            line-height: 2rem;
+            line-height: var(--ft-32);
             color: var(--lightPrimaryClr);
           }
         }
@@ -463,23 +463,23 @@ import menuData from "../assets/script/menu.json";
 
       .franchise-detail-heading {
         font-family: var(--fontHdBold);
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: var(--ft-24);
+        line-height: var(--ft-32);
         margin-bottom: 1rem;
       }
 
       .franchise-detail-subheading {
         color: var(--whiteClr-64);
         font-family: var(--fontSubHdBold);
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: var(--ft-16);
+        line-height: var(--ft-24);
         margin-bottom: 1rem;
       }
     }
 
     .franchise-list {
       padding: 2rem;
-      background: var(--bgClr);
+      background: var(--cardClr);
       color: var(--textClr);
       font-family: var(--fontSemi);
       border-radius: var(--rd-24);
@@ -489,7 +489,7 @@ import menuData from "../assets/script/menu.json";
         justify-content: space-between;
         align-items: center;
         font-size: var(--ft-16);
-        line-height: 1.5rem;
+        line-height: var(--ft-24);
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--textClr-10);
 
@@ -536,13 +536,13 @@ import menuData from "../assets/script/menu.json";
       span {
         font-family: var(--fontSubHdBold);
         font-size: var(--ft-16);
-        line-height: 1.5rem;
+        line-height: var(--ft-24);
       }
 
       strong {
         font-family: var(--fontBold);
-        font-size: 2.25rem;
-        line-height: 2.5rem;
+        font-size: var(--ft-36);
+        line-height: var(--ft-40);
       }
     }
 
@@ -559,7 +559,7 @@ import menuData from "../assets/script/menu.json";
         span {
           font-family: var(--fontRegular);
           font-size: var(--ft-12);
-          line-height: 1rem;
+          line-height: var(--ft-16);
         }
       }
     }
@@ -739,13 +739,14 @@ import menuData from "../assets/script/menu.json";
         margin-bottom: 1rem;
 
         .about-image {
+          order: 2;
           img {
             transform: translateY(0) scale(1);
           }
         }
 
         .heading-wrapper {
-          align-items: center;
+          text-align: center;
         }
       }
     }

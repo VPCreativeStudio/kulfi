@@ -30,8 +30,12 @@
   --ft-18: 1.125rem;
   --ft-20: 1.25rem;
   --ft-24: 1.5rem;
+  --ft-28: 1.75rem;
   --ft-30: 1.875rem;
   --ft-32: 2rem;
+  --ft-36: 2.25rem;
+  --ft-40: 2.5rem;
+  --ft-48: 3rem;
   --ft-64: 4rem;
   --ft-96: 6rem;
 
@@ -84,8 +88,8 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: var(--ft-16);
+  line-height: var(--ft-24);
   color: var(--blackClr);
   background-color: var(--whiteClr);
   -webkit-text-size-adjust: 100%;
@@ -145,7 +149,7 @@ strong {
 }
 .small,
 small {
-  font-size: 0.875em;
+  font-size: var(--ft-14);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -217,17 +221,32 @@ textarea {
 @media (max-width: 50rem) {
   :root {
     --sectionPd: 4rem 2rem;
-    --sectionHeaderPd: 0.5rem 4rem;
+    --sectionHeaderPd: 0.5rem 3rem;
 
-    --ft-12: 0.625rem;
-    --ft-14: 0.75rem;
+    // --ft-12: 0.625rem;
+    // --ft-14: 0.75rem;
+    // --ft-16: 0.875rem;
+    // --ft-18: 1rem;
+    // --ft-20: 1.125rem;
+    // --ft-24: 1.25rem;
+    // --ft-30: 1.75rem;
+    // --ft-32: 1.875rem;
+    // --ft-64: 2rem;
+    // --ft-96: 3rem;
+
+    --ft-12: 0.75rem;
+    --ft-14: 0.875rem;
     --ft-16: 0.875rem;
     --ft-18: 1rem;
     --ft-20: 1.125rem;
     --ft-24: 1.25rem;
+    --ft-28: 1.5rem;
     --ft-30: 1.75rem;
     --ft-32: 1.875rem;
-    --ft-64: 2rem;
-    --ft-96: 3rem;
+    --ft-36: 2rem;
+    --ft-40: 2.25rem;
+    --ft-48: 2.5rem;
+    --ft-64: 3rem;
+    --ft-96: 4rem;
   }
 }

@@ -25,9 +25,21 @@
 
     h5 {
       font-family: var(--fontHdBold);
-      font-size: 2.25rem;
-      line-height: 2.5rem;
+      font-size: var(--ft-36);
+      line-height: var(--ft-40);
       color: var(--whiteClr);
+    }
+  }
+
+  @media (max-width: 65rem) {
+    .logo-wrapper {
+      padding: 0 0 0 3.5rem;
+
+      img {
+        width: 3.5rem;
+        height: 5rem;
+        transform: translateY(-0.5rem);
+      }
     }
   }
 </style>
