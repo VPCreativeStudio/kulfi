@@ -43,22 +43,30 @@ import Button from "../components/button.astro";
   }
 
   @media (max-width: 65rem) {
-    .navigation-button {
-      @include block-element;
-    }
+    header .navigation-button {
+      @include flex-element;
+      flex-direction: column;
+      gap: 0.375rem;
 
+      .hambuger {
+        width: 1.75rem;
+        height: 0.125rem;
+        background-color: var(--whiteClr);
+        border-radius: 0.25rem;
+      }
+    }
     .navigation-wrapper {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       @include abs-position;
-      height: 100vh;
-      top: 0;
+      height: calc(100vh - 3.25rem);
+      top: 3.25rem;
       right: -15rem;
       background-color: var(--primaryClr);
       padding: 2rem 1rem;
 
-      &:active {
+      &.active {
         right: 0;
       }
     }

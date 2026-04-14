@@ -1,5 +1,12 @@
 "use strict";
 
+const navButton = document.querySelector(".navigation-button");
+const navWrapper = document.querySelector(".navigation-wrapper");
+
+navButton.addEventListener("click", () => {
+  navWrapper.classList.toggle("active");
+});
+
 const tabButtons = document.querySelectorAll(".tab");
 const menuCards = document.querySelectorAll(".menu-card");
 
